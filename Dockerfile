@@ -1,6 +1,8 @@
 FROM ubuntu:18.04
 MAINTAINER igor.katson@gmail.com
 
+        
+        
 ARG RB_VERSION
 RUN apt-get update -y && \
     apt-get install --no-install-recommends -y \
@@ -9,7 +11,7 @@ RUN apt-get update -y && \
         uwsgi uwsgi-plugin-python \
         postgresql-client \
         python-psycopg2 python-ldap \
-        git-core mercurial subversion python-svn libssl-dev && \
+        git-core mercurial subversion python-svn python-dev openssl-dev build-essential && \
         rm -rf /var/lib/apt/lists/*
 
 RUN set -ex; \
