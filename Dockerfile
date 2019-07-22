@@ -6,7 +6,7 @@ MAINTAINER igor.katson@gmail.com
 ARG RB_VERSION
 RUN apt-get update -y && \
     apt-get install --no-install-recommends -y \
-        build-essential python-dev libffi-dev libssl-dev patch \
+        build-essential python-dev libffi-dev patch \
         python-pip python-setuptools python-wheel python-virtualenv \
         uwsgi uwsgi-plugin-python \
         postgresql-client \
