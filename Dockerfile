@@ -9,7 +9,7 @@ RUN apt-get update -y && \
         uwsgi uwsgi-plugin-python \
         postgresql-client \
         python-psycopg2 python-ldap \
-        git-core mercurial subversion python-svn && \
+        git-core mercurial subversion python-svn libssl-dev && \
         rm -rf /var/lib/apt/lists/*
 
 RUN set -ex; \
