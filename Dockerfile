@@ -11,10 +11,17 @@ RUN apt-get update -y && \
         uwsgi uwsgi-plugin-python \
         postgresql-client \
         python-psycopg2 python-ldap \
-        git-core mercurial subversion python-svn python-dev build-essential libssl1.0-dev openssl1.0=1.0.2n-1ubuntu5.3 && \
-        rm -rf /var/lib/apt/lists/*
+        git-core mercurial subversion python-svn python-dev build-essential libssl1.0-dev openssl1.0=1.0.2n-1ubuntu5.3
+        
+RUN apt-get remove openssl
+
+RUN ln -s /usr/lib/ssl1.0 /usr/lib/ssl
+
+RUN export PATH=$PATH;/usr/lib/ssl1.0/
 
 RUN export OPENSSL_DIR=/usr/lib/ssl1.0/
+
+RUN rm -rf /var/lib/apt/lists/*
 
 RUN set -ex; \
     if [ "${RB_VERSION}" ]; then RB_VERSION="==${RB_VERSION}"; fi; \
@@ -36,4 +43,4 @@ VOLUME /var/www/
 
 EXPOSE 8000
 
-CMD /start.sh
+CMD /bin/bash
