@@ -14,7 +14,7 @@ RUN apt-get update -y && \
         git-core mercurial subversion python-svn python-dev openssl1.0 libssl1.0-dev build-essential && \
         rm -rf /var/lib/apt/lists/*
 RUN apt-get install -y --allow-downgrades openssl1.0=1.0.2n-1ubuntu5.3 
-RUN echo "export OPENSSL_DIR=/usr/lib/ssl1.0/" >> ~/.bashrc
+RUN echo "export OPENSSL_DIR=/usr/lib/ssl1.0/"
 
 RUN set -ex; \
     if [ "${RB_VERSION}" ]; then RB_VERSION="==${RB_VERSION}"; fi; \
