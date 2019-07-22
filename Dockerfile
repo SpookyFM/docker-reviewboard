@@ -13,7 +13,7 @@ RUN apt-get update -y && \
         python-psycopg2 python-ldap \
         git-core mercurial subversion python-svn python-dev build-essential libssl1.0-dev openssl1.0=1.0.2n-1ubuntu5.3
         
-RUN apt-get remove openssl
+RUN apt-get -y remove openssl
 
 RUN ln -s /usr/lib/ssl1.0 /usr/lib/ssl
 
