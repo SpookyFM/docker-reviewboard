@@ -13,7 +13,7 @@ RUN apt-get update -y && \
         python-psycopg2 python-ldap \
         git-core mercurial subversion python-svn python-dev build-essential && \
         rm -rf /var/lib/apt/lists/*
-RUN apt-get install -y --allow-downgrades libssl1.0-dev
+RUN apt-get install -y --allow-downgrades libssl1.0-dev=1.0.2n-1ubuntu5.3
 RUN apt-get install -y --allow-downgrades openssl1.0=1.0.2n-1ubuntu5.3 
 RUN echo "export OPENSSL_DIR=/usr/lib/ssl1.0/"
 
