@@ -9,7 +9,7 @@ RUN apt-get update -y && \
         uwsgi uwsgi-plugin-python \
         postgresql-client \
         python-psycopg2 python-ldap \
-        git-core mercurial subversion python-svn && \
+        git-core mercurial subversion python-svn dos2unix && \
         rm -rf /var/lib/apt/lists/*
 
 RUN set -ex; \
@@ -25,6 +25,8 @@ ADD start.sh /start.sh
 ADD uwsgi.ini /uwsgi.ini
 ADD shell.sh /shell.sh
 ADD upgrade-site.py /upgrade-site.py
+
+RUN dos2unix /start.sh /uwsgi.ini /shell.sh /upgrade-site.py
 
 RUN chmod +x /start.sh /shell.sh /upgrade-site.py
 
