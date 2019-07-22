@@ -17,7 +17,7 @@ RUN apt-get -y remove openssl
 
 RUN ln -s /usr/lib/ssl1.0 /usr/lib/ssl
 
-RUN export PATH=$PATH;/usr/lib/ssl1.0/
+RUN export PATH=/usr/lib/ssl1.0:$PATH
 
 RUN export OPENSSL_DIR=/usr/lib/ssl1.0/
 
