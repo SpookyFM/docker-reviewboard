@@ -11,7 +11,7 @@ RUN apt-get update -y && \
         uwsgi uwsgi-plugin-python \
         postgresql-client \
         python-psycopg2 python-ldap \
-        git-core mercurial subversion python-svn python-dev openssl-dev build-essential && \
+        git-core mercurial subversion python-svn python-dev libssl-dev build-essential && \
         rm -rf /var/lib/apt/lists/*
 
 RUN set -ex; \
