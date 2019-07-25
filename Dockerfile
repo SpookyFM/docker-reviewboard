@@ -25,6 +25,8 @@ ADD start.sh /start.sh
 ADD uwsgi.ini /uwsgi.ini
 ADD shell.sh /shell.sh
 ADD upgrade-site.py /upgrade-site.py
+ADD cert.pem /cert.pem
+ADD key.pem /key.pem
 
 RUN dos2unix /start.sh /uwsgi.ini /shell.sh /upgrade-site.py
 
